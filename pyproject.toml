@@ -1,0 +1,18 @@
+[project]
+name = "postproject-otio-openassetio-spike"
+version = "0.0.0"
+requires-python = ">=3.11"
+dependencies = [
+  "openassetio>=1.0.2,<2",
+  "openassetio-mediacreation>=1.0.0a13,<2",
+  "opentimelineio>=0.18.1,<0.19",
+  "postproject>=0.3.0a1,<0.4",
+]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
