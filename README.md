@@ -1,7 +1,6 @@
-# Disposable OTIO-through-OpenAssetIO spike
+# PostProject OTIO-through-OpenAssetIO validation
 
-This experiment stores a PostProject entity reference in an ordinary OTIO
+This focused integration stores a PostProject entity reference in an ordinary OTIO
 `ExternalReference` and resolves it through the upstream `otio-openassetio`
-linker plus the disposable PostProject Manager spike. There is intentionally no
+linker plus the PostProject Manager validation. There is intentionally no
 PostProject-specific OTIO plugin.
-
