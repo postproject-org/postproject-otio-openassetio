@@ -25,7 +25,7 @@ def test_external_reference_resolves_without_postproject_linker(tmp_path):
             otio.opentime.RationalTime(1, 24),
         ),
     )
-    timeline = otio.schema.Timeline(name="spike")
+    timeline = otio.schema.Timeline(name="validation")
     timeline.tracks.append(otio.schema.Track(children=[clip]))
     encoded = otio.adapters.write_to_string(timeline, adapter_name="otio_json")
     linked = otio.adapters.read_from_string(
@@ -33,7 +33,7 @@ def test_external_reference_resolves_without_postproject_linker(tmp_path):
         adapter_name="otio_json",
         media_linker_name="openassetio_media_linker",
         media_linker_argument_map={
-            "identifier": "org.postproject.manager-spike",
+            "identifier": "org.postproject.manager-validation",
             "settings": {
                 "production_path": str(project),
                 "library_path": library,
@@ -44,4 +44,3 @@ def test_external_reference_resolves_without_postproject_linker(tmp_path):
     linked_clip = linked.find_clips()[0]
     assert linked_clip.media_reference.target_url == media.resolve().as_uri()
     assert linked_clip.source_range.start_time == otio.opentime.RationalTime(1001, 24)
-
