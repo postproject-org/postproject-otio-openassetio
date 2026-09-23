@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          repository: eseifert/postproject-otio-openassetio-spike
       - uses: actions/checkout@v7
         with:
           repository: eseifert/postproject
@@ -33,4 +35,3 @@ jobs:
       - run: pytest
         env:
           POSTPROJECT_LIBRARY: ${{ github.workspace }}/postproject/target/release/libpostproject.so
-
