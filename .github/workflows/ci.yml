@@ -18,15 +18,15 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          repository: eseifert/postproject-otio-openassetio
+          repository: postproject-org/postproject-otio-openassetio
       - uses: actions/checkout@v7
         with:
-          repository: eseifert/postproject
+          repository: postproject-org/postproject
           ref: ${{ inputs.postproject_ref || 'main' }}
           path: postproject
       - uses: actions/checkout@v7
         with:
-          repository: eseifert/postproject-openassetio
+          repository: postproject-org/postproject-openassetio
           ref: main
           path: manager-validation
       - uses: actions/setup-python@v6
