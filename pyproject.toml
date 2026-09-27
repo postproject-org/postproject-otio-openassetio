@@ -6,7 +6,7 @@ dependencies = [
   "openassetio>=1.0.2,<2",
   "openassetio-mediacreation>=1.0.0a13,<2",
   "opentimelineio>=0.18.1,<0.19",
-  "postproject>=0.3.0a1,<0.4",
+  "postproject>=0.3.0a1,<0.5",
 ]
 
 [build-system]
