@@ -3,7 +3,7 @@
 import os
 
 import opentimelineio as otio
-from postproject import Production
+from postproject import RepresentationRef, Production
 
 
 def test_external_reference_resolves_without_postproject_linker(tmp_path):
@@ -15,7 +15,7 @@ def test_external_reference_resolves_without_postproject_linker(tmp_path):
         with production.transaction() as transaction:
             asset = transaction.import_media(media, "plate")
         representation = production.representations[asset][0]
-        entity_reference = production.host_bindings[representation.id]
+        entity_reference = production.host_bindings[RepresentationRef(representation.id)]
 
     clip = otio.schema.Clip(
         name="plate",
