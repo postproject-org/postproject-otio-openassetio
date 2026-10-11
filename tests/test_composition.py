@@ -12,7 +12,7 @@ def test_external_reference_resolves_without_postproject_linker(tmp_path):
     media.write_bytes(b"frame")
     project = tmp_path / "show.pproj"
     with Production.create(project, library_path=library) as production:
-        with production.transaction() as transaction:
+        with production.edit() as transaction:
             asset = transaction.import_media(media, "plate")
             transaction.commit()
         representation = production.representations[asset][0]
