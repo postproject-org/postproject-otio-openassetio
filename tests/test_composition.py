@@ -13,7 +13,7 @@ def test_external_reference_resolves_without_postproject_linker(tmp_path):
     project = tmp_path / "show.pproj"
     with Production.create(project, library_path=library) as production:
         with production.edit() as transaction:
-            asset = transaction.import_media(media, "plate")
+            asset = transaction.import_media(media, "plate").asset_id
             transaction.commit()
         representation = production.representations[asset][0]
         entity_reference = production.host_bindings[RepresentationRef(representation.id)]
